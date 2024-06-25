@@ -1,1 +1,1 @@
-from .cqt import CQT
+from cqt_jax import CQT
