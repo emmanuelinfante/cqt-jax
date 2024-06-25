@@ -14,7 +14,7 @@ pip install cqt-jax
 
 ```python
 import jax.numpy as jnp
-from cqt_jax import CQT
+from .cqt import CQT
 
 # Initialize the CQT transform
 transform = CQT(
