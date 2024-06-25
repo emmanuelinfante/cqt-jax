@@ -5,7 +5,7 @@
 An invertible and differentiable implementation of the Constant-Q Transform (CQT) using Non-stationary Gabor Transform (NSGT), in Jax.
 
 ```bash
-pip install cqt-pytorch
+pip install cqt-jax
 ```
 [![PyPI - Python Version](https://img.shields.io/pypi/v/cqt-pytorch?style=flat&colorA=black&colorB=black)](https://pypi.org/project/cqt-pytorch/)
 
