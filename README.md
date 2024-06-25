@@ -1,5 +1,5 @@
 
-# CQT - PyTorch
+# CQT - Jax
 
 
 An invertible and differentiable implementation of the Constant-Q Transform (CQT) using Non-stationary Gabor Transform (NSGT), in Jax.
