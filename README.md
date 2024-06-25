@@ -13,19 +13,30 @@ pip install cqt-pytorch
 ## Usage
 
 ```python
-from cqt_pytorch import CQT
+import jax.numpy as jnp
+from cqt_jax import CQT
 
+# Initialize the CQT transform
 transform = CQT(
-    num_octaves = 8,
-    num_bins_per_octave = 64,
-    sample_rate = 48000,
-    block_length = 2 ** 18
+    num_octaves=8,
+    num_bins_per_octave=64,
+    sample_rate=48000,
+    block_length=2 ** 18
 )
 
-# (Random) audio waveform tensor x
-x = torch.randn(1, 2, 2**18) # [1, 1, 262144] = [batch_size, channels, timesteps]
-z = transform.encode(x) # [1, 2, 512, 2839] = [batch_size, channels, frequencies, time]
-y = transform.decode(z) # [1, 1, 262144]
+# Generate a random audio waveform tensor x
+key = jax.random.PRNGKey(0)
+x = jax.random.normal(key, (1, 2, 2**18))  # [1, 2, 262144] = [batch_size, channels, timesteps]
+
+# Encode the waveform
+z = transform.encode(x)  # [1, 2, 512, 2839] = [batch_size, channels, frequencies, time]
+
+# Decode the transformed signal
+y = transform.decode(z)  # [1, 2, 262144]
+
+print(f"Original shape: {x.shape}")
+print(f"Encoded shape: {z.shape}")
+print(f"Decoded shape: {y.shape}")
 ```
 
 ### Example CQT Magnitude Spectrogram (z)
