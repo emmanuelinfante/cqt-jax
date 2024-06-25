@@ -1,26 +1,25 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="cqt-pytorch",
+    name="cqt-jax",
     packages=find_packages(exclude=[]),
-    version="0.0.5",
+    version="0.0.1",
     license="MIT",
-    description="CQT Pytorch",
+    description="CQT JAX",
     long_description_content_type="text/markdown",
-    author="Flavio Schneider",
-    author_email="archinetai@protonmail.com",
-    url="https://github.com/archinetai/cqt-pytorch",
-    keywords=["artificial intelligence", "deep learning"],
+    author="emmanuelinfante",
+    author_email="emanuel.06.educacion@gmail.com",
+    url="https://github.com/emmanuelinfante/cqt-jax",
+    keywords=["artificial intelligence", "deep learning", "signal processing"],
     install_requires=[
-        "torch>=1.6",
-        "data-science-types>=0.2",
-        "einops>=0.4",
+        "jax>=0.2.21",
+        "jaxlib>=0.1.71",
     ],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
     ],
 )
